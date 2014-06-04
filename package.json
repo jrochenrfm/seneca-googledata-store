@@ -1,0 +1,40 @@
+{
+  "name": "seneca-googledata-store",
+  "version": "0.1.0",
+  "description": "Seneca data store plugin for Google Cloud Datastore",
+  "main": "lib/googledata-store.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrochenrfm/seneca-googledata-store.git"
+  },
+  "keywords": [
+    "seneca",
+    "plugin",
+    "store",
+    "google",
+    "cloud",
+    "datastore"
+  ],
+  "author": "John Roche",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "~0.7.0"
+  },
+  "devDependencies": {
+    "async": "~0.7.0",
+    "seneca": "~0.5.15",
+    "mocha": "~1.18.2",
+    "seneca-store-test": "~0.1.0"
+  },
+  "peerDependencies": {
+    "seneca": "*"
+  },
+  "files": [
+    "LICENSE.txt",
+    "README.md",
+    "lib"
+  ]
+}
