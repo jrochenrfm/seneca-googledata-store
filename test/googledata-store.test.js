@@ -15,10 +15,10 @@ var SCOPES = ['https://www.googleapis.com/auth/userinfo.email',
               'https://www.googleapis.com/auth/datastore'];
 
 var options = {
-                'DATASTORE_SERVICE_ACCOUNT': '800084035768-68b220nvdotineslk8rs2qmj6lp9kemh@developer.gserviceaccount.com',
-                'DATASTORE_PRIVATE_KEY_FILE': '../gcds.pem',
+                'DATASTORE_SERVICE_ACCOUNT': '',
+                'DATASTORE_PRIVATE_KEY_FILE': '',
                 'SERVICE_ACCOUNT_SCOPE': SCOPES,
-                'DATASETID': 'delta-clarity-593'
+                'DATASETID': ''
                };
 
 si.use(require('..'), options);
