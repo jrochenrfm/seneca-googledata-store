@@ -25,7 +25,6 @@
     "type-of-is": "~1.4.9"
   },
   "devDependencies": {
-    "async": "~0.7.0",
     "seneca": "~0.5.15",
     "mocha": "~1.18.2",
     "seneca-store-test": "~0.1.0"
