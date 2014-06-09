@@ -21,7 +21,8 @@
   "author": "John Roche",
   "license": "MIT",
   "dependencies": {
-    "googleapis": "~0.7.0"
+    "googleapis": "~0.7.0",
+    "type-of-is": "~1.4.9"
   },
   "devDependencies": {
     "async": "~0.7.0",
