@@ -19,7 +19,7 @@ var options = {
 
 
 seneca.use('googledata-store', options);
-'''
+```
 
 ###Install
 	npm install seneca
@@ -30,16 +30,16 @@ seneca.use('googledata-store', options);
 
 You don't use this module directly. It provides an underlying data storage engine for the Seneca entity API:
 
+```javascript
+var entity = seneca.make$('typename')
+entity.someproperty = "something"
+entity.anotherproperty = 100
 
-	var entity = seneca.make$('typename')
-	entity.someproperty = "something"
-	entity.anotherproperty = 100
-
-	entity.save$( function(err,entity){ ... } )
-	entity.load$( {id: ...}, function(err,entity){ ... } )
-	entity.list$( {property: ...}, function(err,entity){ ... } )
-	entity.remove$( {id: ...}, function(err,entity){ ... } )
-
+entity.save$( function(err,entity){ ... } )
+entity.load$( {id: ...}, function(err,entity){ ... } )
+entity.list$( {property: ...}, function(err,entity){ ... } )
+entity.remove$( {id: ...}, function(err,entity){ ... } )
+```
 
 ###Queries
 
@@ -59,25 +59,25 @@ The standard Seneca query format is supported:
 
 As with all seneca stores, you can access the native driver, in this case, the Google Cloud datastore object using `entity.native$(function(err, datastore){...})`.
 
-With the datatstore object you can perform any [JSON API](https://developers.google.com/datastore/docs/apis/v1beta2/) calls including building a [GQL Query](https://developers.google.com/datastore/docs/concepts/gql)
+With the datastore object you can perform any [JSON API](https://developers.google.com/datastore/docs/apis/v1beta2/) calls including building a [GQL Query](https://developers.google.com/datastore/docs/concepts/gql)
 
-	entity.native$(function(err, datastore, callback){
-		datastore.runQuery({
-	    gqlQuery: {
-	      queryString: 'SELECT * FROM Person',
-	    }
-	  }).execute(function(err, result) {
-	    if (!err) {
-	      // Iterate over the results and return the entities.
-	      result = (result.batch.entityResults || []).map(
-	        function(entityResult) {
-	          return entityResult.entity;
-	        });
-	    }
-	    callback(err, result);
-	  });
-	})
-
+```javascript
+entity.native$(function(err, datastore){
+	datastore.runQuery({
+    gqlQuery: {
+      queryString: 'SELECT * FROM Person',
+    }
+  }).execute(function(err, result) {
+    if (!err) {
+      // Iterate over the results and return the entities.
+      result = (result.batch.entityResults || []).map(
+        function(entityResult) {
+          return entityResult.entity;
+        });
+    }
+  });
+})
+```
 
 ###Test
 cd test
