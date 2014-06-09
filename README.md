@@ -1,13 +1,13 @@
 #seneca-googledata-store
 
-#Seneca node.js data-storage plugin for the Google Cloud Datastore
+###Seneca node.js data-storage plugin for the Google Cloud Datastore
 
 This module is a plugin for the Seneca framework. It provides a storage engine that uses Google Cloud Datastore to persist data.
 
 The Seneca framework provides an [ActiveRecord-style data storage API](http://senecajs.org/data-entities.html). Each supported database has a plugin, such as this one, that provides the underlying Seneca plugin actions required for data persistence.
 
 
-##Quick example
+###Quick example
 	var seneca    = require('seneca')();
 
 	var options = {
@@ -20,12 +20,12 @@ The Seneca framework provides an [ActiveRecord-style data storage API](http://se
 
 	seneca.use('googledata-store', options);
 
-##Install
+###Install
 	npm install seneca
 	npm install seneca-googledata-store
 
 
-##Usage
+###Usage
 
 You don't use this module directly. It provides an underlying data storage engine for the Seneca entity API:
 
@@ -40,7 +40,7 @@ You don't use this module directly. It provides an underlying data storage engin
 	entity.remove$( {id: ...}, function(err,entity){ ... } )
 
 
-##Queries
+###Queries
 
 The standard Seneca query format is supported:
 
@@ -61,7 +61,7 @@ The standard Seneca query format is supported:
 - you can use sort$, limit$, skip$ and fields$ together
 
 
-##Native Driver
+###Native Driver
 
 As with all seneca stores, you can access the native driver, in this case, the Google Cloud datastore object using `entity.native$(function(err, datastore){...})`.
 
@@ -85,6 +85,6 @@ With the datatstore object you can perform any [JSON API](https://developers.goo
 	})
 
 
-##Test
+###Test
 cd test
 mocha googledata-store.test.js --seneca.log.print
