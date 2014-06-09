@@ -8,17 +8,18 @@ The Seneca framework provides an [ActiveRecord-style data storage API](http://se
 
 
 ###Quick example
-	var seneca    = require('seneca')();
+```javascript
+var seneca    = require('seneca')();
+var options = {
+			    'DATASTORE_SERVICE_ACCOUNT': '123456789@developer.gserviceaccount.com',
+			    'DATASTORE_PRIVATE_KEY_FILE': 'path/to/example.pem',
+			    'SERVICE_ACCOUNT_SCOPE': [scope1,scope2],
+			    'DATASETID': 'delta-charley-tango-101'
+			    }
 
-	var options = {
-				    'DATASTORE_SERVICE_ACCOUNT': '123456789@developer.gserviceaccount.com',
-				    'DATASTORE_PRIVATE_KEY_FILE': 'path/to/example.pem',
-				    'SERVICE_ACCOUNT_SCOPE': [scope1,scope2],
-				    'DATASETID': 'delta-charley-tango-101'
-				    }
 
-
-	seneca.use('googledata-store', options);
+seneca.use('googledata-store', options);
+'''
 
 ###Install
 	npm install seneca
@@ -80,4 +81,5 @@ With the datatstore object you can perform any [JSON API](https://developers.goo
 
 ###Test
 cd test
+
 mocha googledata-store.test.js --seneca.log.print
