@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "googleapis": "~0.7.0",
-    "type-of-is": "~1.4.9"
+    "type-of-is": "~3.2.1"
   },
   "devDependencies": {
     "seneca": "~0.5.15",
