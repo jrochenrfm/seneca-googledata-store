@@ -80,6 +80,6 @@ entity.native$(function(err, datastore){
 ```
 
 ###Test
-cd test
+	cd test
 
-mocha googledata-store.test.js --seneca.log.print
+	mocha googledata-store.test.js --seneca.log.print
