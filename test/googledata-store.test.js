@@ -15,11 +15,17 @@ var SCOPES = ['https://www.googleapis.com/auth/userinfo.email',
 /**
 * Enter your Google Datastore details
 */
-var options = {
-                'DATASTORE_SERVICE_ACCOUNT': '',
-                'DATASTORE_PRIVATE_KEY_FILE': '',
+// var options = {
+//                 'DATASTORE_SERVICE_ACCOUNT': '',
+//                 'DATASTORE_PRIVATE_KEY_FILE': '',
+//                 'SERVICE_ACCOUNT_SCOPE': SCOPES,
+//                 'DATASETID': ''
+//                };
+               var options = {
+                'DATASTORE_SERVICE_ACCOUNT': '800084035768-68b220nvdotineslk8rs2qmj6lp9kemh@developer.gserviceaccount.com',
+                'DATASTORE_PRIVATE_KEY_FILE': '../gcds.pem',
                 'SERVICE_ACCOUNT_SCOPE': SCOPES,
-                'DATASETID': ''
+                'DATASETID': 'delta-clarity-593'
                };
 
 si.use(require('..'), options);
@@ -52,12 +58,13 @@ function extraTest(si, done){
 
   async.series(
   {
-    nullOrUndefined: function(cb){
-      console.log('Testing null and undefined values');
+    nullUndefinedTrue: function(cb){
+      console.log('Testing null, undefined, and true values');
 
       var foo = si.make$('foo');
       foo.nul = null;
       foo.und = undefined;
+      foo.bool = true;
 
       foo.save$(function(err, saveOut){
         if(err) return cb(err);
