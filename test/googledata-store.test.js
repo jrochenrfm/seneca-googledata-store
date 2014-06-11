@@ -101,7 +101,7 @@ function extraTest(si, done){
       foo.remove$({all$: true}, function(err, results){
         if(err) return cb(err);
         cb(null);
-      })
+      });
     }
   },
 
