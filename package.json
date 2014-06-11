@@ -27,7 +27,9 @@
   "devDependencies": {
     "seneca": "~0.5.15",
     "mocha": "~1.18.2",
-    "seneca-store-test": "~0.1.0"
+    "seneca-store-test": "~0.1.0",
+    "async": "~0.7.0",
+    "assert": "~1.1.1"
   },
   "peerDependencies": {
     "seneca": "*"
